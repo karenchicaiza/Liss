@@ -1,0 +1,78 @@
+/* Mantenemos tu CSS original lo más intacto posible */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mantener height: 100vh como lo tenías */
+    margin: 0; /* Asegurar que no haya márgenes predeterminados */
+}
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    /* Añadimos un max-width para mejor apariencia en pantallas grandes */
+    max-width: 400px;
+    width: 90%; /* Hace que sea más responsivo */
+}
+/* Aseguramos que input y button (y select, aunque ya no esté) se comporten bien */
+input, button { /* Quité 'select' de aquí si no quieres que haya ningún estilo para él */
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto; /* Centrar y dar margen vertical */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Importante para el ancho correcto */
+    display: block; /* Cada elemento en su propia línea */
+}
+button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave al hover */
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee; /* Estilo de línea horizontal */
+    margin: 25px 0; /* Margen para separador */
+}
+
+/* --- NUEVAS REGLAS CSS para ocultar/mostrar y botón de cancelar --- */
+
+/* La clase que oculta el formulario inicialmente */
+.formulario-oculto {
+    display: none; /* Esto hace que el elemento no ocupe espacio y sea invisible */
+    opacity: 0; /* Para la transición de opacidad */
+    transform: translateY(20px); /* Para la transición de desplazamiento */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Define la duración y tipo de transición */
+}
+
+/* La clase que muestra el formulario y activa la animación */
+.formulario-visible {
+    display: block; /* Muestra el elemento */
+    opacity: 1; /* Completamente opaco */
+    transform: translateY(0); /* Vuelve a la posición original */
+}
+
+/* Estilo para el botón de cancelar dentro del formulario de registro */
+.btn-cancel {
+    background-color: #6c757d; /* Un color gris para el botón de cancelar */
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+/* Mensajes de error/éxito */
+p[id^="mensaje-"] { /* Selecciona cualquier p cuyo id empiece con "mensaje-" */
+    margin-top: 15px;
+    font-weight: bold;
+}
